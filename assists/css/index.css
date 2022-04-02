@@ -1,0 +1,175 @@
+:root {
+    --hover-color: rgb(53, 53, 53);
+    --app-div-color: rgb(31, 31, 31);
+    --app-div-height: 550px;
+    --taskbar-color: rgb(16, 16, 16);
+    --taskbar-height: 45px;
+    --side-width: 50px;
+}
+
+
+
+.m-view {
+    display: none;
+}
+
+body {
+    overflow: hidden;
+    /* -webkit-user-select: none; */
+    /* -moz-user-select: -moz-none; */
+    /* -ms-user-select: none; */
+    user-select: none;
+    background-image: url('../img/wal.jpg');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+}
+
+.appdiv {
+    position: fixed;
+    bottom: var(--taskbar-height);
+    padding: 10px 5px;
+    background: var(--app-div-color);
+    width: max-content;
+    height: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    padding-left: var(--side-width);
+    transition: .1s;
+    font-size: 20px;
+}
+
+.appdiv::-webkit-scrollbar {
+    border-radius: 2px;
+    width: 10px;
+}
+
+.appdiv::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgb(88, 88, 88);
+}
+
+.appdiv::-webkit-scrollbar-thumb:hover {
+    border-radius: 5px;
+    background: rgb(102, 102, 102);
+}
+
+.app {
+    padding: 10px 10px;
+    width: 230px;
+    color: white;
+}
+
+.taskbar {
+    background: var(--taskbar-color);
+    width: 100%;
+    height: var(--taskbar-height);
+    position: absolute;
+    position: fixed;
+    bottom: 0;
+}
+
+#winlogo {
+    font-size: 20px;
+    padding: 12px 15px;
+    color: white;
+    display: inline-block;
+}
+
+#winlogo:hover {
+    color: rgb(66, 156, 227);
+}
+
+/* HOVER */
+
+#winlogo:hover, #search-icon:hover, .app:hover, .sideicon-item:hover, .navicon:hover {
+    background: var(--hover-color);
+}
+
+#search-box {
+    padding: 13px;
+    cursor: text;
+    width: 300px;
+    font-size: 16px;
+    border: none;
+    position: relative;
+    top: -2px;
+    left: -3px;
+}
+
+#search-box:focus {
+    outline: none;
+}
+
+
+.side {
+    width: var(--side-width);
+    height: 100%;
+    position: fixed;
+    left: -1px;
+    margin-top: -10px;
+    color: white;
+}
+
+.side:hover {
+    width: 200px;
+    transition: .3s ease-in;
+    background: rgb(44, 44, 44);
+}
+
+.sideicon {
+    display: block;
+    position: relative;
+    bottom: -380px;
+    bottom: -400px;
+    margin-top: -65px;
+}
+
+.sideicon-item, .sidetext-item {
+    padding: 10px;
+}
+.navicon{
+    display: block;
+    padding: 10px 15px;
+    font-size: 23px;
+}
+
+
+@media (max-width: 770px) {
+
+    body{
+        background-image: url('../img/wal-m.jpg');
+    }
+    .com-view {
+        display: none;
+    }
+    .m-view {
+        display: unset;
+    }
+    #search-icon {
+        position: absolute;
+        width: 20px;
+        padding: 12px 15px 10px;
+    }
+    :root {
+        --app-div-height: 400px;
+    }
+    .app{
+        width: 200px;
+    }
+    .sideicon {
+        margin-top: -197px;
+    }
+
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
